@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.smilingframework.web.controller.common.BaseController;
 
 @Controller
-@RequestMapping("/${sys.root}/")
+@RequestMapping("/")
 public class IndexController extends BaseController {
 
 	@RequestMapping("index")
