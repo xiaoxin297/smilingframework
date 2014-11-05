@@ -23,6 +23,7 @@
 	</bean>
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="persistenceUnitName" value="smilingframeworkpersistence"/>
+<!-- 		<property name="packagesToScan" value="com.smilingframework.*.model"></property> -->
 		<property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml"></property>
 		<property name="jpaVendorAdapter">  
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>  

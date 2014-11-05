@@ -1,4 +1,4 @@
-package com.smilingframework.web.controller.common;
+package com.smilingframework.web.controller.base;
 
 public class BaseResponse {
 

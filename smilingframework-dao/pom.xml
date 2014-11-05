@@ -10,6 +10,11 @@
 	<artifactId>smilingframework-dao</artifactId>
 	<dependencies>
 		<dependency>
+			<groupId>com.smilingmobile.framework</groupId>
+			<artifactId>smilingframework-core</artifactId>
+			<version>1.0</version>
+		</dependency>	
+		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.7.0.RELEASE</version>
@@ -24,8 +29,13 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-jdbc</artifactId>
 				<version>${spring.version}</version>
-			</dependency>
+		</dependency>
 
+		<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-commons-core</artifactId>
@@ -79,5 +89,25 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.1.0.Final</version>
 		</dependency>
+		
+		<dependency>
+		  <groupId>com.fasterxml.jackson.core</groupId>
+		  <artifactId>jackson-core</artifactId>
+		  <version>2.4.3</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>com.fasterxml.jackson.core</groupId>
+		  <artifactId>jackson-databind</artifactId>
+		  <version>2.4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.smilingmobile.framework</groupId>
+			<artifactId>smilingframework-core</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
+	<build>
+		<finalName>smilingframework-dao</finalName>
+	</build>
 </project>

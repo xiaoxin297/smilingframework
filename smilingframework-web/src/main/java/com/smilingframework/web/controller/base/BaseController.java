@@ -1,9 +1,11 @@
-package com.smilingframework.web.controller.common;
+package com.smilingframework.web.controller.base;
 
 import java.util.List;
 
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+
+import com.smilingframework.core.code.SysCode;
 
 /**
  * Controller基类
@@ -33,8 +35,8 @@ public class BaseController {
 	 * @return
 	 */
 	protected BaseResponse setSuccestResult(BaseResponse response) {
-		response.setCode("000000");
-		response.setMemo("成功");
+		response.setCode(SysCode.SUCCESS);
+		response.setMemo(SysCode.getMemo(SysCode.SUCCESS));
 		return response;
 	}
 

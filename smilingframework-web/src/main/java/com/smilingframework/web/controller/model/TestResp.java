@@ -1,6 +1,6 @@
-package com.smilingframework.web.controller;
+package com.smilingframework.web.controller.model;
 
-import com.smilingframework.web.controller.common.BaseResponse;
+import com.smilingframework.web.controller.base.BaseResponse;
 
 public class TestResp extends BaseResponse {
 

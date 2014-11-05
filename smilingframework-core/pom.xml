@@ -8,4 +8,8 @@
   </parent>
   <artifactId>smilingframework-core</artifactId>
   <packaging>jar</packaging>
+  
+  <build>
+  	<finalName>smilingframework-core</finalName>
+  </build>
 </project>

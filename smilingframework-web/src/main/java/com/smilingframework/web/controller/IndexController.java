@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.smilingframework.web.controller.common.BaseController;
+import com.smilingframework.web.controller.base.BaseController;
 
 @Controller
 @RequestMapping("/")
