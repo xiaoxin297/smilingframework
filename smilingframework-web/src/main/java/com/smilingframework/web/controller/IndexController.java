@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.smilingframework.web.controller.base.BaseController;
+import com.smilingframework.web.controller.base.BaseResponse;
 
 @Controller
 @RequestMapping("/")
