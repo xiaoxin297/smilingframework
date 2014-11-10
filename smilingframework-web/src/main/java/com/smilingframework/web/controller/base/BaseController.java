@@ -36,7 +36,7 @@ public class BaseController {
 	 */
 	protected BaseResponse setSuccestResult(BaseResponse response) {
 		response.setCode(SysCode.SUCCESS);
-		response.setMemo(SysCode.getMemo(SysCode.SUCCESS));
+		response.setMemo(SysCode.SUCCESS_MEMO);
 		return response;
 	}
 

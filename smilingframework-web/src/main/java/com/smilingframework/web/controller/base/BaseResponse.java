@@ -5,6 +5,15 @@ public class BaseResponse {
 	private String memo;
 	private String code;
 	
+	private BaseResult result;
+	
+	
+	public BaseResult getResult() {
+		return result;
+	}
+	public void setResult(BaseResult result) {
+		this.result = result;
+	}
 	public String getMemo() {
 		return memo;
 	}
