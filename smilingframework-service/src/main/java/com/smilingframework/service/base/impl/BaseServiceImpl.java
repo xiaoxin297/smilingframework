@@ -4,12 +4,13 @@ import java.util.Date;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.smilingframework.dao.base.BaseDao;
 import com.smilingframework.dao.base.BaseEntity;
 import com.smilingframework.service.base.BaseService;
-
+@Service
 public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 
 	@Autowired

@@ -1,4 +1,4 @@
-package com.smilingframework.dao.dal;
+package com.smilingframework.dao.base;
 
 import java.io.Serializable;
 

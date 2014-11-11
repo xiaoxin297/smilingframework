@@ -1,5 +1,7 @@
 package com.smilingframework.service.base;
 
+import java.io.Serializable;
+
 import com.smilingframework.dao.base.BaseEntity;
 
 public interface BaseService<T extends BaseEntity> {
