@@ -1,6 +1,10 @@
 package com.smilingframework.service.base;
 
 import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.smilingframework.dao.base.BaseEntity;
 
@@ -11,7 +15,13 @@ public interface BaseService<T extends BaseEntity> {
 	 * @param news
 	 * @return
 	 */
-	public T save(T news);
+	public T save(T t);
+	
+	/**
+	 * 批量保存
+	 * @param ts
+	 */
+	public void save(List<T> ts);
 	
 	/**
 	 * 獲取
@@ -45,4 +55,5 @@ public interface BaseService<T extends BaseEntity> {
 	 * @param uuids
 	 */
 	public void deleteBatch(String[] uuids);
+	
 }
