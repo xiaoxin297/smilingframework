@@ -25,7 +25,25 @@ public class BaseController {
 	protected BaseResponse setErrorResult(BindingResult result,String code,String memo) {
 		BaseResponse response = new BaseResponse();
 		response.setCode(code);
-		response.setMemo(memo + " : " + getErrorMessages(result.getAllErrors()));
+		if(result != null){
+			response.setMemo(memo + " : " + getErrorMessages(result.getAllErrors()));
+		}else{
+			response.setMemo(memo);
+		}
+		return response;
+	}
+	
+	/**
+	 * 设置参数错误响应信息
+	 * @param result
+	 * @param code
+	 * @param memo
+	 * @return
+	 */
+	protected BaseResponse setErrorResult(String code,String memo) {
+		BaseResponse response = new BaseResponse();
+		response.setCode(code);
+		response.setMemo(memo);
 		return response;
 	}
 	
@@ -37,6 +55,13 @@ public class BaseController {
 	protected BaseResponse setSuccestResult(BaseResponse response) {
 		response.setCode(SysCode.SUCCESS);
 		response.setMemo(SysCode.SUCCESS_MEMO);
+		return response;
+	}
+	
+	protected BaseResponse setRequestErroorResult(BindingResult result) {
+		BaseResponse response = new BaseResponse();
+		response.setCode(SysCode.REQUESTERROR);
+		response.setMemo(SysCode.REQUESTERROR_MEMO + " : " + getErrorMessages(result.getAllErrors()));
 		return response;
 	}
 
