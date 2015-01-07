@@ -27,11 +27,4 @@
   		</plugin>
   	</plugins>
   </build>
-  <dependencies>
-	<dependency>
-	  <groupId>com.similingmobile.mail</groupId>
-	  <artifactId>mail</artifactId>
-	  <version>1.0</version>
-	</dependency>
-  </dependencies>
 </project>
