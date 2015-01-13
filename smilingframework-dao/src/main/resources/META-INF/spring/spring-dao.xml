@@ -29,5 +29,4 @@
 	
 	<jpa:repositories base-package="com.smilingframework"  entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="transactionManager"></jpa:repositories>
 
-	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="false"/>
 </beans>

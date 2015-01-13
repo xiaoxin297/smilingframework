@@ -1,5 +1,7 @@
 package com.smilingframework.service.base.impl;
 
+import static org.springframework.data.jpa.repository.query.QueryUtils.toOrders;
+
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Date;
@@ -8,6 +10,9 @@ import java.util.UUID;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -43,12 +48,23 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 		return dao.save(t);
 	}
 	
+	private List<T> getList(List<T> ts){
+		for(T t : ts){
+			if(t.getUuid() == null){
+				t.setUuid(UUID.randomUUID().toString());
+				t.setCreateTime(new Date());
+			}else{
+				t.setUpdateTime(new Date());
+			}
+		}
+		return ts;
+	}
+	
+	
 	@Override
 	@Transactional(rollbackFor = {Exception.class})
 	public void save(List<T> ts){
-		for(T t : ts){
-			save(t);
-		}
+		dao.save(getList(ts));
 	}
 	
 
@@ -58,8 +74,13 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 	}
 
 	@Override
+	@Transactional(rollbackFor=Exception.class)
 	public void delete(String uuid) {
-		dao.delete(uuid);
+		//dao.delete(uuid);
+		T t = get(uuid);
+		if(t != null){
+			em.remove(t);
+		}
 	}
 
 	@Override
@@ -83,6 +104,15 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 		for(String uuid : uuids){
 			delete(uuid);
 		}
+	}
+	
+	@Override
+	public List<T> findAll() {
+		CriteriaBuilder builder = em.getCriteriaBuilder();
+		CriteriaQuery<T> query = builder.createQuery(clazz);
+		Root<T> root = query.from(clazz);
+		query.select(root);
+		return	em.createQuery(query).getResultList();
 	}
 	
 	

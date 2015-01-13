@@ -56,4 +56,10 @@ public interface BaseService<T extends BaseEntity> {
 	 */
 	public void deleteBatch(String[] uuids);
 	
+	/**
+	 * 获取所有记录
+	 * @return
+	 */
+	public List<T> findAll();
+	
 }
